@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>
+        ishop project
+    </h1>
+</div>
+<div id="container" class="container"></div>
+
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="ishop.js"></script>
+
+<script>
+
+    var goodsArr=[
+        {
+            name:'MENS JACK JONES SPIDER JJ ORIGINAL DRESS BLUE CANVAS TRAINERS SHOES SIZE 6-12',
+            price: '99',
+            photo: 'http://images.esellerpro.com/2441/I/44/New-Jack-and-Jones-Spider-JI-Org-Dress-Blue-Mens-Trainers-Shoes-Online-footwear-shop-01.jpg',
+            stock: '32',
+            sku: '34281082710'
+        },
+        {
+            name:'Ботильоны кожаные JFWGRANT JACK & JONES',
+            price: '76',
+            photo: 'https://cdn.laredoute.com/products/250by250/e/7/f/e7f0ddd0e49844c6b92f43979f7739c8.jpg',
+            stock: '55',
+            sku: '3677886252'
+        },
+        {
+            name:'MENS JACK JONES VERTU CANVAS MID SNEAKER NAVY TRAINERS BOOTS SHOES SIZE',
+            price: '210',
+            photo: 'http://images.esellerpro.com/2441/I/44/New-Jack-and-Jones-Vertu-Canvas-MID-Sneaker-Navy-12082150-Mens-Trainers-Shoes-05.jpg',
+            stock: '98',
+            sku: '43663452'
+        },
+        {
+            name:'Jack and Jones Men Siti Ankle Boots, Black (Anthracite), 6 UK 40',
+            price: '56',
+            photo: 'https://images-na.ssl-images-amazon.com/images/I/81KRyE7gaML._UX395_.jpg',
+            stock: '16',
+            sku: '4676788987654'
+        },
+        {
+            name:'Jack & Jones Tender Shoes – Grey – Go Shop Shoes',
+            price: '43',
+            photo: 'https://i.pinimg.com/736x/d4/90/1d/d4901dad7100107a815360fdd10e4bc9--athletic-shoes-shoes-sneakers.jpg',
+            stock: '2331',
+            sku: '576880998562'
+        },
+        {
+            name:'Jack & Jones Canvas Shoes',
+            price: '134',
+            photo: 'https://rukminim1.flixcart.com/image/704/704/shoe/9/f/m/1858052-40-jack-jones-vapor-blue-original-imaeqjc5bf7fgnvn.jpeg?q=70',
+            stock: '54',
+            sku: '54676898735'
+        },
+        {
+            name:'jack jones shoes',
+            price: '321',
+            photo: 'http://www.bluemaize.net/im/shoes/jack-jones-shoes-1.jpg',
+            stock: '22',
+            sku: '536524567677'
+        }
+    ];
+
+    ReactDOM.render(
+        React.createElement(ishopTable,{goods:goodsArr}),
+        document.getElementById('container')
+    );
+
+</script>
+
+
+</body>
+</html>
