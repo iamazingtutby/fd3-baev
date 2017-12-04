@@ -22,9 +22,8 @@ var ishopTable = React.createClass({
         for (var i = 0; i < this.props.goods.length; i += 3) {
             goodsTable2.push(this.props.goods.slice(i, i + 3));
         }
-        console.log(goodsTable2);
 
-        goodsTable2.forEach( function (v) {
+        goodsTable2.forEach( function (v,i) {
                 var tds = [];
                 v.forEach(function (item) {
                     var goodsTd =
@@ -47,10 +46,11 @@ var ishopTable = React.createClass({
                                 )
                         )
                     tds.push(goodsTd);
+                    console.log('td', item.sku);
                 })
 
                 var goodsTr =
-                    React.DOM.tr({key:v.sku,className:'item-row'},
+                    React.DOM.tr({key:i,className:'item-row'},
                         tds
                     );
                 goodsTable.push(goodsTr);
@@ -68,5 +68,6 @@ var ishopTable = React.createClass({
             )
         );
     },
+
 
 });
