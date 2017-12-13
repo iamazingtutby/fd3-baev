@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+<div class="container">
+    <h1>
+        filter project
+    </h1>
+</div>
+<div id="container" class="container"></div>
+
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="filterBlock.js"></script>
+<script src="searchField.js"></script>
+<script src="buttonSort.js"></script>
+
+<script>
+
+    var rowsArr=[
+        'Nulla mollis, nulla ac efficitur condimentum, dui nunc viverra nulla',
+        'elementum nunc nisl non mauris',
+        'Nullam congue dui ut arcu vulputate volutpat',
+        'Vivamus dictum ipsum in dolor auctor viverra',
+        'Nam lacinia arcu consequat magna ultrices pretium',
+        'Morbi at ipsum eget tortor auctor fermentum at sit amet es',
+        'Nunc volutpat lacus mollis, ultricies libero ut, viverra enim'
+        ];
+
+    ReactDOM.render(
+        React.createElement(filterBlock,{rows:rowsArr}),
+        document.getElementById('container')
+    );
+
+</script>
+
+
+</body>
+</html>
