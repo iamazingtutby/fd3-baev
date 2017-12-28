@@ -1,42 +1,67 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import createReactClass from 'create-react-class';
 
 var contacts = [
-    {
-        code: 1,
-        name: 'first item'
-    },
-    {
-        code: 2,
-        name: 'second item'
-    },
-    {
-        code: 3,
-        name: 'third item'
-    },
-    {
-        code: 4,
-        name: 'fourth item'
-    },
-    {
-        code: 5,
-        name: 'fifth item'
-    }
+    'first item',
+    'second item',
+    'third item',
+    'fourth item',
+    'fifth item'
 ];
-var Contact = React.CreateClass({
+
+
+var Contact = createReactClass({
     render: function(){
-        return  <li> {this.props.name} </li>
-        
+        return  ( 
+        <li className="list-item"> 
+            <div> {this.props.name} </div>
+            <div> {this.props.phoneNumber} </div>
+        </li>
+        )
     }
 })
-var List = React.createClass({
+var List = createReactClass({
+
+    getInitialState: function(){
+        return {
+            displayedContacts: contacts
+        }
+    },
+    searchHandle: function(ev){
+        var searchQuery = ev.target.value.toLowerCase();
+        var displayedContacts = contacts.filter(function(el){
+            var searchValue = el.toLowerCase();
+            return searchValue.indexOf(searchQuery) !== -1;
+        })
+        console.log('==', displayedContacts);
+
+        this.setState({
+            displayedContacts: displayedContacts
+        })
+    },
+
+    sortHandle: function(){
+        var _dContacts = contacts.sort();
+        console.log('==_dContacts', _dContacts);
+
+        this.setState({
+            displayedContacts: _dContacts
+        })
+    },
+
     render: function () {
         return (
             <div>
+                <input type="text" onChange={this.searchHandle}/>
+                <button type="button" onClick={this.sortHandle} >sort</button>
                 <ul>
                     {
-                    contacts.map(function(el){
-                        return <Contact key={el.code} name={el.name} />;
+                    this.state.displayedContacts.map(function(el,i){
+                        return <Contact
+                        key={i}
+                        name={el}
+                        />;
                     })
                     }
                     </ul>
